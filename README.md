@@ -1,27 +1,38 @@
 # Bangladeshi University Logos Collection 🇧🇩
 
-A comprehensive collection of PNG logos for 50 major universities in Bangladesh, compiled and organized for easy use in projects, applications, and research.
+A collection of PNG logos for 46 major universities in Bangladesh, compiled and organized for easy use in projects, applications, and research.
 
 ## 📊 Collection Overview
 
-- **Total Universities**: 50
-- **Logos Collected**: 49 (98% success rate)
+- **Total Universities**: 46
+- **Universities with at least one logo source**: 45
+- **Unique PNG files in `logos/`**: 29
 - **Format**: PNG (512x512 pixels)
 - **Quality**: High-resolution, standardized format
 - **Date**: September 2025
+
+> **Note on the collection.** The `logos/` directory now contains only deduplicated
+> PNG files — many SVG logos were converted using a placeholder image, so files
+> that were byte-identical to another logo have been removed. The remaining
+> 16 universities without a `logos/*.png` file still have an SVG (or other
+> format) available; convert with `convert_svg_to_png.py` style tooling to
+> regenerate PNGs. Run `python3 final_summary.py` to see the current state.
 
 ## 🎯 What's Included
 
 ### 📁 Directory Structure
 ```
 university-logos-bangladesh/
-├── logos/                          # 49 PNG university logos
+├── logos/                          # 29 deduplicated PNG university logos
 ├── data/
-│   └── universities.csv           # Complete university database
+│   └── universities.csv           # 46 unique universities
 ├── original/                      # Original SVG and PNG files
-│   ├── svg/                      # 44 SVG logos
-│   └── png/                      # 22 original PNG files
-└── README.md                     # This file
+│   ├── svg/                       # SVG logos
+│   ├── png/                       # Original PNG files
+│   ├── both_formats/              # Universities with both SVG and PNG
+│   └── reports/                   # Collection reports
+├── final_summary.py               # Prints current collection summary
+└── README.md                      # This file
 ```
 
 ### 🏛️ Universities Included
@@ -80,13 +91,12 @@ if os.path.exists(logo_path):
 | BRAC University | ✅ | PNG |
 | Bangladesh University of Engineering and Technology | ✅ | PNG |
 | Shahjalal University of Science and Technology | ✅ | PNG |
-| Chittagong University of Engineering and Technology | ✅ | PNG |
 | North South University | ✅ | PNG |
-| East West University | ✅ | PNG |
-| American International University-Bangladesh | ✅ | PNG |
 | Daffodil International University | ✅ | PNG |
-| Independent University, Bangladesh | ✅ | PNG |
-| *...and 39 more universities* | ✅ | PNG |
+| Ahsanullah University of Science and Technology | ✅ | PNG |
+| Green University of Bangladesh | ✅ | PNG |
+| University of Frontier Technology, Bangladesh | ✅ | PNG |
+| *...and 19 more universities* | ✅ | PNG |
 | Army Institute of Business Administration, Sylhet | ❌ | N/A |
 
 *Complete list available in `data/universities.csv`*
@@ -113,11 +123,10 @@ if os.path.exists(logo_path):
 
 ## 📊 Statistics
 
-- **Success Rate**: 98% (49/50 universities)
-- **Original PNG Files**: 39 universities
-- **SVG Converted to PNG**: 10 universities
-- **Sources Used**: Wikipedia API, university websites
-- **Processing Time**: Automated collection and conversion
+- **Universities with a logo source**: 45/46 (97.8%)
+- **Unique PNG files in `logos/`**: 29
+- **Sources used**: Wikipedia API, university websites
+- **Processing**: Automated collection and conversion
 
 ## 🤝 Contributing
 
